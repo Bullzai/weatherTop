@@ -1,8 +1,8 @@
 <table class="ui fixed table">
     <thead>
     <tr>
-        #{list items:_station, as:'station'}
-        <th>${station.name}</th>
+        #{list items:_latestStationWeather, as:'station'}
+        <th>${station.fahrenheit(station.readings.temperature)}</th>
         <th>Weather</th>
         <th>Temp</th>
         <th>Wind</th>
@@ -11,7 +11,7 @@
     </tr>
     </thead>
     <tbody>
-    #{list items:_station.readings, as:'reading'}
+    #{list items:_latestStationWeather.readings, as:'reading'}
     <tr>
         <td>
             ${reading.code}

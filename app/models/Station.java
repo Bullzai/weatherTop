@@ -20,4 +20,12 @@ public class Station extends Model
     public Station(String name) {
         this.name = name;
     }
+
+    public int lastIndex(){
+        return readings.size() -1;
+    }
+
+    public float fahrenheit(float cels) {
+        return (cels * (9/5) + 32);
+    }
 }

@@ -19,4 +19,6 @@ public class Reading extends Model
         this.windSpeed = windSpeed;
         this.pressure = pressure;
     }
+
+
 }
