@@ -1,31 +1,20 @@
-<table class="ui fixed table">
-    <thead>
-    <tr>
-        #{list items:_latestStationWeather, as:'station'}
-        <th>${station.fahrenheit(station.readings.temperature)}</th>
-        <th>Weather</th>
-        <th>Temp</th>
-        <th>Wind</th>
-        <th>Pressure</th>
+<div class="ui padded grid">
+    <div class="five column row">
+        #{list items:_station, as:'station'}
+        <div class="blue column">${station.name}</div>
+        <div class="teal column">
+            Weather<br>
+            ${station.weather(station.readings.code[station.lastReading()])}</div>
+        <div class="blue column">
+            Temp<br>
+            ${station.readings.temperature[station.readings.size()-1]} C<br>
+            ${station.fahrenheit(station.readings.temperature[station.lastReading()])} F</div>
+        <div class="teal column">
+            Wind<br>
+            asd</div>
+        <div class="blue column">
+            Pressure<br>
+            ${station.readings.pressure[station.lastReading()]} hpa</div>
         #{/list}
-    </tr>
-    </thead>
-    <tbody>
-    #{list items:_latestStationWeather.readings, as:'reading'}
-    <tr>
-        <td>
-            ${reading.code}
-        </td>
-        <td>
-            ${reading.temperature}
-        </td>
-        <td>
-            ${reading.windSpeed}
-        </td>
-        <td>
-            ${reading.pressure}
-        </td>
-    </tr>
-    #{/list}
-    </tbody>
-</table>
+    </div>
+</div>
