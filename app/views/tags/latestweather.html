@@ -7,11 +7,11 @@
             ${station.weather(station.readings.code[station.lastReading()])}</div>
         <div class="blue column">
             Temp<br>
-            ${station.readings.temperature[station.readings.size()-1]} C<br>
+            ${station.readings.temperature[station.lastReading()]} C<br>
             ${station.fahrenheit(station.readings.temperature[station.lastReading()])} F</div>
         <div class="teal column">
             Wind<br>
-            asd</div>
+            ${station.beaufort(station.readings.windSpeed[station.lastReading()])} bft</div>
         <div class="blue column">
             Pressure<br>
             ${station.readings.pressure[station.lastReading()]} hpa</div>
