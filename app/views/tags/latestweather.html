@@ -11,9 +11,11 @@
             ${station.fahrenheit(station.readings.temperature[station.lastReading()])} F</div>
         <div class="teal column">
             Wind<br>
-            ${station.beaufort(station.readings.windSpeed[station.lastReading()])} bft</div>
+            ${station.beaufort(station.readings.windSpeed[station.lastReading()])} bft<br>
+            ${station.direction(station.readings.windDirection[station.lastReading()])}<br>
+        </div>
         <div class="blue column">
-            Pressure<br>
+            Pressure ${station.feelsLike(station.readings.temperature[station.lastReading()], station.readings.windSpeed[station.lastReading()])}<br>
             ${station.readings.pressure[station.lastReading()]} hpa</div>
         #{/list}
     </div>

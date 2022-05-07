@@ -9,6 +9,9 @@ import javax.persistence.OneToMany;
 
 import play.db.jpa.Model;
 
+import static java.lang.Math.pow;
+import static java.lang.Math.round;
+
 @Entity
 public class Station extends Model
 {
@@ -78,5 +81,48 @@ public class Station extends Model
             beaufort = 11;
         }
         return beaufort;
+    }
+
+    public String direction (float windDirection) {
+        String direction = null;
+        if (348.75 < windDirection && windDirection < 11.25) {
+            direction = "North";
+        } else if (11.25 < windDirection && windDirection < 33.75) {
+            direction = "North North East";
+        } else if (33.75 < windDirection && windDirection < 56.25) {
+            direction = "North East";
+        } else if (56.25 < windDirection && windDirection < 78.75) {
+            direction = "East North East";
+        } else if (78.75 < windDirection && windDirection < 101.25) {
+            direction = "East";
+        } else if (101.25 < windDirection && windDirection < 123.75) {
+            direction = "East South East";
+        } else if (123.75 < windDirection && windDirection < 146.25) {
+            direction = "South East";
+        } else if (146.25 < windDirection && windDirection < 168.75) {
+            direction = "South South East";
+        } else if (168.75 < windDirection && windDirection < 191.25) {
+            direction = "South";
+        } else if (191.25 < windDirection && windDirection < 213.75) {
+            direction = "South South West";
+        } else if (213.75 < windDirection && windDirection < 236.25) {
+            direction = "South West";
+        } else if (236.25 < windDirection && windDirection < 258.75) {
+            direction = "West South West";
+        } else if (258.75 < windDirection && windDirection < 281.25) {
+            direction = "West";
+        } else if (281.25 < windDirection && windDirection < 303.75) {
+            direction = "West North West";
+        } else if (303.75 < windDirection && windDirection < 326.25) {
+            direction = "North West";
+        } else if (326.25 < windDirection && windDirection < 348.75) {
+            direction = "North North West";
+        }
+        return direction;
+    }
+
+    public double feelsLike (float temperature, float windSpeed) {
+        double power = pow(windSpeed, 0.16);
+        return round((13.12 + 0.6215*temperature - 11.37*power + 0.3965*temperature*power) * 100.0) / 100.0;
     }
 }
