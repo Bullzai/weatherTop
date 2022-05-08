@@ -1,5 +1,6 @@
 package controllers;
 
+import models.Reading;
 import models.Station;
 import play.Logger;
 import play.mvc.Controller;
@@ -14,5 +15,13 @@ public class StationCtrl extends Controller {
     Logger.info("Rendering Station");
     Logger.info("Station id = " + id);
     render("station.html", station);
+  }
+
+  public static void submitReport(Long id, int code, float temperature, float windSpeed, int windDirection, int pressure) {
+    Reading reading = new Reading(code, temperature, windSpeed, windDirection, pressure);
+    Station station = Station.findById(id);
+    station.readings.add(reading);
+    station.save();
+    redirect("/station/" + id);
   }
 }

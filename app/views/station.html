@@ -1,11 +1,10 @@
 #{extends 'main.html' /}
-#{set title:'Station' /}
+#{set title: station.name + ' Weather Station'/}
 
 #{menu id:"dashboard"/}
 
-#{list items:station, as:'station'}
 <section class="ui segment">
-    #{latestweather station:station/}
-    #{listreadings station:station/}
+  #{latestweather station:station /}
+  #{listreadings station:station /}
+  #{submitreport station:station /}
 </section>
-#{/list}

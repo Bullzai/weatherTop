@@ -1,10 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+<form class="ui stacked segment form" action="/station/${_station.id}/submitreport" method="POST">
+  <div class="five fields">
+    <div class="field">
+      <label>Code</label>
+      <input placeholder="00" type="number" name="code">
+    </div>
+    <div class="field">
+      <label>Temperature</label>
+      <input placeholder="00.00 C" type="number" name="temperature">
+    </div>
+    <div class="field">
+      <label>Wind Speed</label>
+      <input placeholder="00.00 km/h" type="number" name="windSpeed">
+    </div>
+    <div class="field">
+      <label>Wind Direction</label>
+      <input placeholder="000 deg" type="number" name="windDirection">
+    </div>
+    <div class="field">
+      <label>Pressure</label>
+      <input placeholder="000 hPa" type="number" name="pressure">
+    </div>
+  </div>
+  <button class="ui blue submit button">Submit Report</button>
+</form>

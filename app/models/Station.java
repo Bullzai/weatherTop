@@ -80,7 +80,7 @@ public class Station extends Model {
         weather = "Thunder";
         break;
       default:
-        weather = "Empty string";
+        weather = "";
     }
     return weather;
   }

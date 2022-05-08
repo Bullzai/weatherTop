@@ -7,7 +7,7 @@
       ${station.weather(station.lastReading())}
     </div>
     <div class="blue column">
-      Temp<br>
+      Temperature<br>
       ${station.readings.temperature[station.lastIndex()]} °C<br>
       ${station.fahrenheit(station.lastReading())} °F
     </div>
@@ -19,7 +19,7 @@
     </div>
     <div class="blue column">
       Pressure<br>
-      ${station.readings.pressure[station.lastIndex()]} hpa
+      ${station.readings.pressure[station.lastIndex()]} hPa
     </div>
     #{/list}
   </div>
