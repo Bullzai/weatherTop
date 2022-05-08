@@ -1,22 +1,26 @@
 <div class="ui padded grid">
-    <div class="five column row">
-        #{list items:_station, as:'station'}
-        <div class="blue column">${station.name}</div>
-        <div class="teal column">
-            Weather<br>
-            ${station.weather(station.lastReading())}</div>
-        <div class="blue column">
-            Temp<br>
-            ${station.readings.temperature[station.lastIndex()]} °C<br>
-            ${station.fahrenheit(station.lastReading())} °F</div>
-        <div class="teal column">
-            Wind<br>
-            ${station.beaufort(station.lastReading())} bft<br>
-            ${station.direction(station.lastReading())}<br>
-            Feels like: ${station.feelsLike(station.lastReading())} °C</div>
-        <div class="blue column">
-            Pressure<br>
-            ${station.readings.pressure[station.lastIndex()]} hpa</div>
-        #{/list}
+  <div class="five column row">
+    #{list items:_station, as:'station'}
+    <div class="blue column">${station.name}</div>
+    <div class="teal column">
+      Weather<br>
+      ${station.weather(station.lastReading())}
     </div>
+    <div class="blue column">
+      Temp<br>
+      ${station.readings.temperature[station.lastIndex()]} °C<br>
+      ${station.fahrenheit(station.lastReading())} °F
+    </div>
+    <div class="teal column">
+      Wind<br>
+      ${station.beaufort(station.lastReading())} bft<br>
+      ${station.direction(station.lastReading())}<br>
+      Feels like: ${station.feelsLike(station.lastReading())} °C
+    </div>
+    <div class="blue column">
+      Pressure<br>
+      ${station.readings.pressure[station.lastIndex()]} hpa
+    </div>
+    #{/list}
+  </div>
 </div>
