@@ -1,18 +1,18 @@
 package controllers;
 
+import models.Station;
 import play.Logger;
 import play.mvc.Controller;
 
 import java.util.List;
 
-public class Station {
-    public class StationCtrl extends Controller {
-        public static void index() {
-            Logger.info("Rendering station");
+public class StationCtrl extends Controller {
+  public static void index(Long id) {
 
-            List<models.Station> stations = models.Station.findAll();
+    Station station = Station.findById(id);
 
-            render("station.html", stations);
-        }
-    }
+    Logger.info("Rendering Station");
+    Logger.info("Station id = " + id);
+    render("station.html", station);
+  }
 }

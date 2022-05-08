@@ -14,6 +14,9 @@ public class Reading extends Model
     public int windDirection;
     public int pressure;
 
+    public Reading() {
+    }
+
     public Reading(int code, float temperature, float windSpeed, int pressure, int windDirection) {
         this.code = code;
         this.temperature = temperature;
@@ -21,4 +24,9 @@ public class Reading extends Model
         this.pressure = pressure;
         this.windDirection = windDirection;
     }
+
+    public float fahrenheit(float cels) {
+        return (cels * 9/5 + 32);
+    }
+
 }

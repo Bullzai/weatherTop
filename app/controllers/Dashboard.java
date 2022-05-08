@@ -1,36 +1,24 @@
 package controllers;
 
-import models.Reading;
 import models.Station;
 import play.Logger;
 import play.mvc.Controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
-
-public class Dashboard extends Controller
-{
+public class Dashboard extends Controller {
   public static void index() {
     Logger.info("Rendering Dashboard");
 
     List<Station> stations = Station.findAll();
-//    List<Station> latestStationWeather = new ArrayList<>();
-//
-//    latestStationWeather = getLatestWeather(stations);
 
-    render ("dashboard.html", stations);
+    render("dashboard.html", stations);
   }
 
-//  public static List<Station> getLatestWeather(List<Station> station) {
-//    List<Station> tempList = new ArrayList<>();
-//
-//    for (Station s : station) {
-//      Reading r = s.readings.get(s.readings.size()-1);
-//      s.readings.clear();
-//      s.readings.add(r);
-//      tempList.add(s);
-//      }
-//    return tempList;
-//  }
+  public static void addStation(String name) {
+
+    Station station = new Station(name);
+    station.save();
+    redirect("/dashboard");
+  }
 }

@@ -4,19 +4,19 @@
         <div class="blue column">${station.name}</div>
         <div class="teal column">
             Weather<br>
-            ${station.weather(station.readings.code[station.lastReading()])}</div>
+            ${station.weather(station.lastReading())}</div>
         <div class="blue column">
             Temp<br>
-            ${station.readings.temperature[station.lastReading()]} C<br>
-            ${station.fahrenheit(station.readings.temperature[station.lastReading()])} F</div>
+            ${station.readings.temperature[station.lastIndex()]} °C<br>
+            ${station.fahrenheit(station.lastReading())} °F</div>
         <div class="teal column">
             Wind<br>
-            ${station.beaufort(station.readings.windSpeed[station.lastReading()])} bft<br>
-            ${station.direction(station.readings.windDirection[station.lastReading()])}<br>
-        </div>
+            ${station.beaufort(station.lastReading())} bft<br>
+            ${station.direction(station.lastReading())}<br>
+            Feels like: ${station.feelsLike(station.lastReading())} °C</div>
         <div class="blue column">
-            Pressure ${station.feelsLike(station.readings.temperature[station.lastReading()], station.readings.windSpeed[station.lastReading()])}<br>
-            ${station.readings.pressure[station.lastReading()]} hpa</div>
+            Pressure<br>
+            ${station.readings.pressure[station.lastIndex()]} hpa</div>
         #{/list}
     </div>
 </div>
