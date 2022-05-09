@@ -15,14 +15,20 @@ import static java.lang.Math.round;
 @Entity
 public class Station extends Model {
   public String name;
+  public double latitude;
+  public double longitude;
 
   @OneToMany(cascade = CascadeType.ALL)
   public List<Reading> readings = new ArrayList<Reading>();
 
   public Station(String name) {
     this.name = name;
-//        Reading reading = new Reading();
-//        readings.add(reading);
+  }
+
+  public Station(String name, double latitude, double longitude) {
+    this.name = name;
+    this.latitude = latitude;
+    this.longitude = longitude;
   }
 
   public Reading lastReading() {
