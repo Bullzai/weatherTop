@@ -1,6 +1,7 @@
 package models;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -179,4 +180,88 @@ public class Station extends Model {
     double power = pow(windSpeed, 0.16);
     return round((13.12 + 0.6215 * temperature - 11.37 * power + 0.3965 * temperature * power) * 100.0) / 100.0;
   }
+
+  public double roundedLatitude() {
+    return (int) (this.latitude * 1000.0) / 1000.0;
+  }
+
+  public double roundedLongitude() {
+    return (int) (this.longitude * 1000.0) / 1000.0;
+  }
+
+//  public float minValue(String minValueString) {
+//    try {
+//      ArrayList<Float> arr = new ArrayList<Float>(); // Create an ArrayList so we could populate it and sort it
+//
+//      for (Reading reading : readings) {
+//        switch (minValueString) {
+//          case "temperature":
+//            arr.add(reading.temperature);
+//            break;
+//          case "windSpeed":
+//            arr.add(reading.windSpeed);
+//            break;
+//          case "pressure":
+//            arr.add((float) reading.pressure);
+//            break;
+//        }
+//      }
+//
+//      Collections.sort(arr); // Sort the ArrayList
+//      return arr.get(0); // First element in the ArrayList is the minimum value
+//    } catch (Exception e) {
+//      return 0;
+//    }
+//  }
+//
+//  public float maxValue(String maxValueString) {
+//    try {
+//      ArrayList<Float> arr = new ArrayList<Float>();
+//
+//      for (Reading reading : readings) {
+//        switch (maxValueString) {
+//          case "temperature":
+//            arr.add(reading.temperature);
+//            break;
+//          case "windSpeed":
+//            arr.add(reading.windSpeed);
+//            break;
+//          case "pressure":
+//            arr.add((float) reading.pressure);
+//            break;
+//        }
+//      }
+//
+//      Collections.sort(arr);
+//      return arr.get(arr.size() - 1); // Last element in the ArrayList is the maximum value
+//    } catch (Exception e) {
+//      return 0;
+//    }
+//  }
+
+  public String minMax(String maxValueString) {
+    try {
+      ArrayList<Float> arr = new ArrayList<Float>();
+
+      for (Reading reading : readings) {
+        switch (maxValueString) {
+          case "temperature":
+            arr.add(reading.temperature);
+            break;
+          case "windSpeed":
+            arr.add(reading.windSpeed);
+            break;
+          case "pressure":
+            arr.add((float) reading.pressure);
+            break;
+        }
+      }
+
+      Collections.sort(arr);
+      return "Max: " + arr.get(arr.size() - 1) + "\nMin: " + arr.get(0); // Last element in the ArrayList is the maximum value
+    } catch (Exception e) {
+      return "";
+    }
+  }
 }
+

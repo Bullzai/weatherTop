@@ -1,25 +1,32 @@
 <div class="ui padded grid">
   <div class="five column row">
     #{list items:_station, as:'station'}
-    <div class="blue column">${station.name}</div>
+    <div class="blue column">
+      ${station.name} <i class="teal marker huge icon"></i><br>
+      Lat: ${station.roundedLatitude()}<br>
+      Lng: ${station.roundedLongitude()}<br>
+    </div>
     <div class="teal column">
-      Weather<br>
+      Weather <i class="olive cloud sun huge icon"></i><br>
       ${station.weather(station.lastReading())}
     </div>
     <div class="blue column">
-      Temperature<br>
+      Temperature <i class="teal temperature low huge icon"></i><br>
       ${station.readings.temperature[station.lastIndex()]} °C<br>
-      ${station.fahrenheit(station.lastReading())} °F
+      ${station.fahrenheit(station.lastReading())} °F<br>
+      <pre>${station.minMax('temperature')}</pre>
     </div>
     <div class="teal column">
-      Wind<br>
+      Wind <i class="olive wind huge icon"></i><br>
       ${station.beaufort(station.lastReading())} bft<br>
       ${station.direction(station.lastReading())}<br>
-      Feels like: ${station.feelsLike(station.lastReading())} °C
+      Feels like: ${station.feelsLike(station.lastReading())} °C<br>
+      <pre>${station.minMax('windSpeed')}</pre>
     </div>
     <div class="blue column">
-      Pressure<br>
-      ${station.readings.pressure[station.lastIndex()]} hPa
+      Pressure <i class="teal huge sun outline loading icon"></i><br>
+      ${station.readings.pressure[station.lastIndex()]} hPa<br>
+      <pre>${station.minMax('pressure')}</pre>
     </div>
     #{/list}
   </div>
