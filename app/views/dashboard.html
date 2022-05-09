@@ -5,12 +5,17 @@
 
 #{list items:stations, as:'station'}
 <section class="ui segment">
-  <h2 class="ui header">
-    ${station.name}
-  </h2>
-
-  <a href="/station/${station.id}" class="ui icon button"> <i class="folder open icon"></i></a>
-
+  #{latestweather station:station /}
+  <a href="/station/${station.id}">
+    <div class="ui animated fade button" tabindex="0">
+      <div class="visible content">
+        <i class="folder open icon"></i>
+      </div>
+      <div class="hidden content">
+        View
+      </div>
+    </div>
+  </a>
 </section>
 #{/list}
 #{addstation /}
