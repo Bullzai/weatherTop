@@ -1,32 +1,44 @@
 <table class="ui fixed table">
   <thead>
-    <tr>
-      <th>Date/Time</th>
-      <th>Code</th>
-      <th>Temp</th>
-      <th>Wind Speed</th>
-      <th>Pressure</th>
-    </tr>
+  <tr>
+    <th>Date/Time</th>
+    <th>Code</th>
+    <th>Temp</th>
+    <th>Wind Speed</th>
+    <th>Pressure</th>
+  </tr>
   </thead>
   <tbody>
-    #{list items:_station.readings, as:'reading'}
-      <tr>
-        <td>
-          ${reading.date}
-        </td>
-        <td>
-          ${reading.code}
-        </td>
-        <td>
-          ${reading.temperature}
-        </td>
-        <td>
-          ${reading.windSpeed}
-        </td>
-        <td>
-          ${reading.pressure}
-        </td>
-      </tr>
-    #{/list}
+  #{list items:_station.readings, as:'reading'}
+  <tr>
+    <td>
+      ${reading.date}
+    </td>
+    <td>
+      ${reading.code}
+    </td>
+    <td>
+      ${reading.temperature}
+    </td>
+    <td>
+      ${reading.windSpeed}
+    </td>
+    <td>
+      ${reading.pressure}
+    </td>
+    <td>
+      <a href="/station/${_station.id}/deletereport/${reading.id}">
+        <div class="ui animated fade button" tabindex="0">
+          <div class="visible content">
+            <i class="brown trash icon"></i>
+          </div>
+          <div class="hidden content">
+            Delete
+          </div>
+        </div>
+      </a>
+    </td>
+  </tr>
+  #{/list}
   </tbody>
 </table>

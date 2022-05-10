@@ -23,4 +23,14 @@ public class StationCtrl extends Controller {
     station.save();
     redirect("/station/" + id);
   }
+
+  public static void deleteReport(Long stationid, Long readingid) {
+    Station station = Station.findById(stationid);
+    Reading reading = Reading.findById(readingid);
+    Logger.info ("Removing reading #" + reading.id);
+    station.readings.remove(reading);
+    station.save();
+    reading.delete();
+    redirect("/station/" + stationid);
+  }
 }
