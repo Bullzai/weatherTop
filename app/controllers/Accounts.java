@@ -10,6 +10,7 @@ public class Accounts extends Controller {
   }
 
   public static void login() {
+    // check if member is already logged in and redirect them
     if (session.contains("logged_in_Memberid")) {
       redirect("/dashboard");
     } else {
@@ -21,14 +22,14 @@ public class Accounts extends Controller {
     Logger.info("Registering new user " + email);
     Member member = new Member(email, password, firstname, lastname);
     member.save();
-    session.put("logged_in_Memberid", member.id);
+    session.put("logged_in_Memberid", member.id); // automatically log them in upon registration
     redirect("/dashboard");
   }
 
   public static void authenticate(String email, String password) {
     Logger.info("Attempting to authenticate with " + email + ":" + password);
-
     Member member = Member.findByEmail(email);
+
     if ((member != null) && (member.checkPassword(password) == true)) {
       Logger.info("Authentication successful");
       session.put("logged_in_Memberid", member.id);
@@ -53,5 +54,33 @@ public class Accounts extends Controller {
       login();
     }
     return member;
+  }
+
+  public static void showProfile() {
+    Member member = Accounts.getLoggedInMember();
+    Logger.info("Rendering profile");
+    render("profile.html", member);
+  }
+
+  public static void editProfile(String email, String password, String firstname, String lastname) {
+    Logger.info("Updating user info " + firstname);
+    Member member = Accounts.getLoggedInMember();
+
+    // check if the user has entered something in the fields
+    if (!email.isEmpty()) {
+      member.email = email;
+    }
+    if (!password.isEmpty()) {
+      member.password = password;
+    }
+    if (!firstname.isEmpty()) {
+      member.firstname = firstname;
+    }
+    if (!lastname.isEmpty()) {
+      member.lastname = lastname;
+    }
+
+    member.save();
+    redirect("/profile");
   }
 }

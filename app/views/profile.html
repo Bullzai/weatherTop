@@ -1,0 +1,31 @@
+#{extends 'main.html' /}
+#{set title: member.firstname + ' ' + member.lastname /}
+
+#{menu id:"profile"/}
+
+<div class="ui two column grid basic middle aligned segment">
+  <div class="column">
+    <form class="ui stacked segment form" action="/profile/editprofile" method="POST">
+      <h3 class="ui header">Edit your profile details</h3>
+      <div class="two fields">
+        <div class="field">
+          <label>First Name</label>
+          <input placeholder="${member.firstname}" type="text" name="firstname">
+        </div>
+        <div class="field">
+          <label>Last Name</label>
+          <input placeholder=${member.lastname} type="text" name="lastname">
+        </div>
+      </div>
+      <div class="field">
+        <label>Email</label>
+        <input placeholder=${member.email} type="text" name="email">
+      </div>
+      <div class="field">
+        <label>Password</label>
+        <input type="password" name="password">
+      </div>
+      <button class="ui blue submit button">Submit</button>
+    </form>
+  </div>
+</div>
