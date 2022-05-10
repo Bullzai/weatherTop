@@ -263,5 +263,34 @@ public class Station extends Model {
       return "";
     }
   }
+
+  public String trend(String trendField) {
+    ArrayList<Float> arr = new ArrayList<Float>();
+
+    for (Reading reading : readings) {
+      switch (trendField) {
+        case "temperature":
+          arr.add(reading.temperature);
+          break;
+        case "windSpeed":
+          arr.add(reading.windSpeed);
+          break;
+        case "pressure":
+          arr.add((float) reading.pressure);
+          break;
+      }
+    }
+
+    int arrSize = arr.size();
+    try {
+      if (arr.get(arrSize - 3) > arr.get(arrSize - 2) && arr.get(arrSize - 2) > arr.get(arrSize - 1)) {
+        return "down";
+      } else if (arr.get(arrSize - 3) < arr.get(arrSize - 2) && arr.get(arrSize - 2) < arr.get(arrSize - 1)) {
+        return "up";
+      }
+    } catch (Exception e) {
+    }
+    return "";
+  }
 }
 
