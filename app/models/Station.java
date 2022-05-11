@@ -32,14 +32,6 @@ public class Station extends Model {
     this.longitude = longitude;
   }
 
-  public Reading lastReading() {
-    if (!readings.isEmpty()) {
-      return readings.get(readings.size() - 1);
-    }
-    return null;
-  }
-
-
   public int lastIndex() {
     if (!readings.isEmpty()) {
       return readings.size() - 1;
@@ -47,58 +39,68 @@ public class Station extends Model {
     return 0;
   }
 
-  public float fahrenheit(Reading reading) {
+  public float fahrenheit() {
     if (!readings.isEmpty()) {
-      float cels = reading.temperature;
+      float cels = readings.get(readings.size() - 1).temperature;
       return (cels * 9 / 5 + 32);
     }
     return 0;
   }
 
-  public String weather(Reading reading) {
+  public String[] weather() {
     int code = 0;
+    String[] weather = new String[2];
+
     if (!readings.isEmpty()) {
-      code = reading.code;
+      code = readings.get(readings.size() - 1).code;
     }
-    String weather = null;
+
     switch (code) {
       case 100:
-        weather = "Clear";
+        weather[0] = "Clear";
+        weather[1] = "sun";
         break;
       case 200:
-        weather = "Partial Clouds";
+        weather[0] = "Partial Clouds";
+        weather[1] = "cloud sun";
         break;
       case 300:
-        weather = "Cloudy";
+        weather[0] = "Cloudy";
+        weather[1] = "cloud";
         break;
       case 400:
-        weather = "Light Showers";
+        weather[0] = "Light Showers";
+        weather[1] = "cloud sun rain";
         break;
       case 500:
-        weather = "Heavy Showers";
+        weather[0] = "Heavy Showers";
+        weather[1] = "cloud showers heavy";
         break;
       case 600:
-        weather = "Rain";
+        weather[0] = "Rain";
+        weather[1] = "cloud rain";
         break;
       case 700:
-        weather = "Snow";
+        weather[0] = "Snow";
+        weather[1] = "snowflake";
         break;
       case 800:
-        weather = "Thunder";
+        weather[0] = "Thunder";
+        weather[1] = "bolt";
         break;
       default:
-        weather = "";
+        weather[0] = "";
+        weather[1] = "meteor";
     }
     return weather;
   }
 
-
-  public int beaufort(Reading reading) {
+  public int beaufort() {
     int beaufort = 0;
     float windSpeed = 0;
 
     if (!readings.isEmpty()) {
-      windSpeed = reading.windSpeed;
+      windSpeed = readings.get(readings.size() - 1).windSpeed;
     }
     if (1 < windSpeed && windSpeed < 5) {
       beaufort = 1;
@@ -126,11 +128,12 @@ public class Station extends Model {
     return beaufort;
   }
 
-  public String direction(Reading reading) {
+  public String direction() {
     String direction = null;
     int windDirection = 0;
+
     if (!readings.isEmpty()) {
-      windDirection = reading.windDirection;
+      windDirection = readings.get(readings.size() - 1).windDirection;
     }
     if (348.75 < windDirection && windDirection < 11.25) {
       direction = "North";
@@ -168,13 +171,13 @@ public class Station extends Model {
     return direction;
   }
 
-  public double feelsLike(Reading reading) {
-
+  public double feelsLike() {
     float temperature = 0;
     float windSpeed = 0;
+
     if (!readings.isEmpty()) {
-      temperature = reading.temperature;
-      windSpeed = reading.windSpeed;
+      temperature = readings.get(readings.size() - 1).temperature;
+      windSpeed = readings.get(readings.size() - 1).windSpeed;
     }
 
     double power = pow(windSpeed, 0.16);
@@ -188,56 +191,6 @@ public class Station extends Model {
   public double roundedLongitude() {
     return (int) (this.longitude * 1000.0) / 1000.0;
   }
-
-//  public float minValue(String minValueString) {
-//    try {
-//      ArrayList<Float> arr = new ArrayList<Float>(); // Create an ArrayList so we could populate it and sort it
-//
-//      for (Reading reading : readings) {
-//        switch (minValueString) {
-//          case "temperature":
-//            arr.add(reading.temperature);
-//            break;
-//          case "windSpeed":
-//            arr.add(reading.windSpeed);
-//            break;
-//          case "pressure":
-//            arr.add((float) reading.pressure);
-//            break;
-//        }
-//      }
-//
-//      Collections.sort(arr); // Sort the ArrayList
-//      return arr.get(0); // First element in the ArrayList is the minimum value
-//    } catch (Exception e) {
-//      return 0;
-//    }
-//  }
-//
-//  public float maxValue(String maxValueString) {
-//    try {
-//      ArrayList<Float> arr = new ArrayList<Float>();
-//
-//      for (Reading reading : readings) {
-//        switch (maxValueString) {
-//          case "temperature":
-//            arr.add(reading.temperature);
-//            break;
-//          case "windSpeed":
-//            arr.add(reading.windSpeed);
-//            break;
-//          case "pressure":
-//            arr.add((float) reading.pressure);
-//            break;
-//        }
-//      }
-//
-//      Collections.sort(arr);
-//      return arr.get(arr.size() - 1); // Last element in the ArrayList is the maximum value
-//    } catch (Exception e) {
-//      return 0;
-//    }
-//  }
 
   public String minMax(String maxValueString) {
     try {
@@ -282,6 +235,7 @@ public class Station extends Model {
     }
 
     int arrSize = arr.size();
+
     try {
       if (arr.get(arrSize - 3) > arr.get(arrSize - 2) && arr.get(arrSize - 2) > arr.get(arrSize - 1)) {
         return "down";

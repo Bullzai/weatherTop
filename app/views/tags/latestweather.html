@@ -17,10 +17,10 @@
       <div class="ui equal width grid">
         <div class="left floated left aligned column">
           <h3>Weather</h3>
-          ${station.weather(station.lastReading())}
+          ${station.weather()[0]}
         </div>
         <div class="right floated center aligned column">
-          <i class="olive cloud sun huge icon"></i>
+          <i class="olive ${station.weather()[1]} huge icon"></i>
         </div>
       </div>
     </div>
@@ -29,7 +29,7 @@
         <div class="left floated left aligned column">
           <h3>Temperature</h3>
           ${station.readings.temperature[station.lastIndex()]} °C<br>
-          ${station.fahrenheit(station.lastReading())} °F<br>
+          ${station.fahrenheit()} °F<br>
           ${station.minMax('temperature')}
         </div>
         <div class="right floated center aligned column">
@@ -42,9 +42,9 @@
       <div class="ui equal width grid">
         <div class="left floated left aligned column">
           <h3>Wind</h3>
-          ${station.beaufort(station.lastReading())} bft<br>
-          ${station.direction(station.lastReading())}<br>
-          Feels like: ${station.feelsLike(station.lastReading())} °C<br>
+          ${station.beaufort()} bft<br>
+          ${station.direction()}<br>
+          Feels like: ${station.feelsLike()} °C<br>
           ${station.minMax('windSpeed')}
         </div>
         <div class="right floated center aligned column">
