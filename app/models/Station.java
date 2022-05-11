@@ -258,7 +258,7 @@ public class Station extends Model {
       }
 
       Collections.sort(arr);
-      return "Max: " + arr.get(arr.size() - 1) + "\nMin: " + arr.get(0); // Last element in the ArrayList is the maximum value
+      return "Max: " + arr.get(arr.size() - 1) + " Min: " + arr.get(0); // Last element in the ArrayList is the maximum value
     } catch (Exception e) {
       return "";
     }

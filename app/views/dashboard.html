@@ -3,29 +3,31 @@
 
 #{menu id:"dashboard"/}
 
-#{list items:stations, as:'station'}
 <section class="ui segment">
-  #{latestweather station:station /}
-  <a href="/station/${station.id}">
-    <div class="ui animated fade button" tabindex="0">
-      <div class="visible content">
-        <i class="folder open icon"></i>
+  #{list items:stations, as:'station'}
+  <section class="ui segment">
+    #{latestweather station:station /}
+    <a href="/station/${station.id}">
+      <div class="ui animated fade button" tabindex="0">
+        <div class="visible content">
+          <i class="folder open icon"></i>
+        </div>
+        <div class="hidden content">
+          View
+        </div>
       </div>
-      <div class="hidden content">
-        View
+    </a>
+    <a href="/dashboard/deletestation/${station.id}">
+      <div class="ui animated fade button" tabindex="0">
+        <div class="visible content">
+          <i class="trash icon"></i>
+        </div>
+        <div class="hidden content">
+          Delete
+        </div>
       </div>
-    </div>
-  </a>
-  <a href="/dashboard/deletestation/${station.id}">
-    <div class="ui animated fade button" tabindex="0">
-      <div class="visible content">
-        <i class="trash icon"></i>
-      </div>
-      <div class="hidden content">
-        Delete
-      </div>
-    </div>
-  </a>
+    </a>
+  </section>
+  #{/list}
+  #{addstation /}
 </section>
-#{/list}
-#{addstation /}

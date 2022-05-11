@@ -2,35 +2,68 @@
   <div class="five column row">
     #{list items:_station, as:'station'}
     <div class="blue column">
-      ${station.name} <i class="teal marker huge icon"></i><br>
-      Lat: ${station.roundedLatitude()}<br>
-      Lng: ${station.roundedLongitude()}<br>
+      <div class="ui equal width grid">
+        <div class="left floated left aligned column">
+          <h3>${station.name}</h3>
+          Lat: ${station.roundedLatitude()}<br>
+          Lng: ${station.roundedLongitude()}<br>
+        </div>
+        <div class="right floated center aligned column">
+          <i class="teal marker huge icon"></i>
+        </div>
+      </div>
     </div>
     <div class="teal column">
-      Weather <i class="olive cloud sun huge icon"></i><br>
-      ${station.weather(station.lastReading())}
+      <div class="ui equal width grid">
+        <div class="left floated left aligned column">
+          <h3>Weather</h3>
+          ${station.weather(station.lastReading())}
+        </div>
+        <div class="right floated center aligned column">
+          <i class="olive cloud sun huge icon"></i>
+        </div>
+      </div>
     </div>
     <div class="blue column">
-      Temperature <i class="teal temperature low huge icon"></i><br>
-      ${station.readings.temperature[station.lastIndex()]} °C<br>
-      ${station.fahrenheit(station.lastReading())} °F<br>
-      <pre>${station.minMax('temperature')}</pre>
-      <i class="teal big arrow ${station.trend('temperature')} icon"></i>
+      <div class="ui equal width grid">
+        <div class="left floated left aligned column">
+          <h3>Temperature</h3>
+          ${station.readings.temperature[station.lastIndex()]} °C<br>
+          ${station.fahrenheit(station.lastReading())} °F<br>
+          ${station.minMax('temperature')}
+        </div>
+        <div class="right floated center aligned column">
+          <i class="teal temperature low huge icon"></i><br><br>
+          <i class="teal big arrow ${station.trend('temperature')} icon"></i>
+        </div>
+      </div>
     </div>
     <div class="teal column">
-      Wind <i class="olive wind huge icon"></i><br>
-      ${station.beaufort(station.lastReading())} bft<br>
-      ${station.direction(station.lastReading())}<br>
-      Feels like: ${station.feelsLike(station.lastReading())} °C<br>
-      <pre>${station.minMax('windSpeed')}</pre>
-      <i class="blue big arrow ${station.trend('windSpeed')} icon"></i>
+      <div class="ui equal width grid">
+        <div class="left floated left aligned column">
+          <h3>Wind</h3>
+          ${station.beaufort(station.lastReading())} bft<br>
+          ${station.direction(station.lastReading())}<br>
+          Feels like: ${station.feelsLike(station.lastReading())} °C<br>
+          ${station.minMax('windSpeed')}
+        </div>
+        <div class="right floated center aligned column">
+          <i class="olive wind huge icon"></i><br><br>
+          <i class="olive big arrow ${station.trend('windSpeed')} icon"></i>
+        </div>
+      </div>
     </div>
     <div class="blue column">
-      Pressure <i class="teal huge sun outline loading icon"></i><br>
-      ${station.readings.pressure[station.lastIndex()]} hPa<br>
-      <pre>${station.minMax('pressure')}</pre>
-      <i class="teal big arrow ${station.trend('pressure')} icon"></i>
-
+      <div class="ui equal width grid">
+        <div class="left floated left aligned column">
+          <h3>Pressure</h3>
+          ${station.readings.pressure[station.lastIndex()]} hPa<br>
+          ${station.minMax('pressure')}
+        </div>
+        <div class="right floated center aligned column">
+          <i class="right teal huge sun outline loading icon"></i><br><br>
+          <i class="teal big arrow ${station.trend('pressure')} icon"></i></div>
+      </div>
     </div>
     #{/list}
   </div>
