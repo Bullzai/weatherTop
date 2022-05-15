@@ -6,8 +6,12 @@ import play.mvc.Controller;
 
 public class Accounts extends Controller {
   public static void signup() {
-    render("signup.html");
-  }
+    // check if member is already logged in and redirect them
+    if (session.contains("logged_in_Memberid")) {
+      redirect("/dashboard");
+    } else {
+      render("signup.html");
+    }  }
 
   public static void login() {
     // check if member is already logged in and redirect them
@@ -51,7 +55,7 @@ public class Accounts extends Controller {
       String memberId = session.get("logged_in_Memberid");
       member = Member.findById(Long.parseLong(memberId));
     } else {
-      login();
+      login(); // once we check, send them back to login page
     }
     return member;
   }

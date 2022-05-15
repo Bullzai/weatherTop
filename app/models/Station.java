@@ -1,3 +1,10 @@
+/**
+ * Station class holds the most important methods
+ * that are used in 'play' environment .html
+ *
+ * @author Vidmantas Valskis
+ * @version 1.0
+ */
 package models;
 
 import java.util.ArrayList;
@@ -47,6 +54,14 @@ public class Station extends Model {
     return 0;
   }
 
+  /**
+   * Reads in latest readings code value and returns
+   * appropriate display text and fomantic ui icon name
+   *
+   * @return A string array, where:
+   * string[0] returns the actual message to be displayed
+   * string[1] returns fomantic ui icon name to be used
+   */
   public String[] weather() {
     int code = 0;
     String[] weather = new String[2];
@@ -211,7 +226,11 @@ public class Station extends Model {
       }
 
       Collections.sort(arr);
-      return "Max: " + arr.get(arr.size() - 1) + " Min: " + arr.get(0); // Last element in the ArrayList is the maximum value
+      /*
+      First element in the ArrayList is the minimum value
+      Last element in the ArrayList is the maximum value
+       */
+      return "Max: " + arr.get(arr.size() - 1) + " Min: " + arr.get(0);
     } catch (Exception e) {
       return "";
     }

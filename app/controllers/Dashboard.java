@@ -13,13 +13,18 @@ public class Dashboard extends Controller {
   public static void index() {
     Logger.info("Rendering Dashboard");
     Member member = Accounts.getLoggedInMember();
+
+    if (member == null) {
+      Accounts.logout(); // log them out if web app was restarted and newly created account cookie was still set
+    }
+
     List<Station> stations = member.stations;
 
-    if (stations.size() > 0) { // check if there
+    if (stations.size() > 0) { // check if there is a station
       Collections.sort(stations, new Comparator<Station>() {
         @Override
         public int compare(Station object1, Station object2) {
-          return object1.name.compareTo(object2.name);
+          return object1.name.compareTo(object2.name); // compare the 2 station objects using their name
         }
       });
     }

@@ -1,5 +1,6 @@
 package controllers;
 
+import models.Member;
 import models.Reading;
 import models.Station;
 import org.joda.time.DateTime;
@@ -10,6 +11,7 @@ import java.util.Date;
 
 public class StationCtrl extends Controller {
   public static void index(Long id) {
+    Member member = Accounts.getLoggedInMember();
     Station station = Station.findById(id);
     Logger.info("Rendering Station " + id);
     render("station.html", station);
