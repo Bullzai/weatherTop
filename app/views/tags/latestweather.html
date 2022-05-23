@@ -4,8 +4,8 @@
       <div class="ui equal width grid">
         <div class="left floated left aligned column">
           <h3>${_station.name}</h3>
-          Lat: ${_station.roundedLatitude()}<br>
-          Lng: ${_station.roundedLongitude()}<br>
+          Lat: ${utils.StationUtil.roundedLatitude(_station)}<br>
+          Lng: ${utils.StationUtil.roundedLongitude(_station)}<br>
         </div>
         <div class="right floated center aligned column">
           <i class="teal marker huge icon"></i>
@@ -16,10 +16,10 @@
       <div class="ui equal width grid">
         <div class="left floated left aligned column">
           <h3>Weather</h3>
-          ${_station.weather()[0]}
+          ${utils.StationUtil.weather(_station)[0]}
         </div>
         <div class="right floated center aligned column">
-          <i class="olive ${_station.weather()[1]} huge icon"></i>
+          <i class="olive ${utils.StationUtil.weather(_station)[1]} huge icon"></i>
         </div>
       </div>
     </div>
@@ -28,12 +28,12 @@
         <div class="left floated left aligned column">
           <h3>Temperature</h3>
           ${_station.readings.temperature[_station.lastIndex()]} °C<br>
-          ${_station.fahrenheit()} °F<br>
-          ${_station.minMax('temperature')}
+          ${utils.StationUtil.fahrenheit(_station)} °F<br>
+          ${utils.StationUtil.minMax('temperature', _station)}
         </div>
         <div class="right floated center aligned column">
           <i class="teal temperature low huge icon"></i><br><br>
-          <i class="teal big arrow ${_station.trend('temperature')} icon"></i>
+          <i class="teal big arrow ${utils.StationUtil.trend('temperature', _station)} icon"></i>
         </div>
       </div>
     </div>
@@ -41,14 +41,14 @@
       <div class="ui equal width grid">
         <div class="left floated left aligned column">
           <h3>Wind</h3>
-          ${_station.beaufort()} bft<br>
-          ${_station.direction()}<br>
-          Feels like: ${_station.feelsLike()} °C<br>
-          ${_station.minMax('windSpeed')}
+          ${utils.StationUtil.beaufort(_station)} bft<br>
+          ${utils.StationUtil.direction(_station)}<br>
+          Feels like: ${utils.StationUtil.feelsLike(_station)} °C<br>
+          ${utils.StationUtil.minMax('windSpeed', _station)}
         </div>
         <div class="right floated center aligned column">
           <i class="olive wind huge icon"></i><br><br>
-          <i class="olive big arrow ${_station.trend('windSpeed')} icon"></i>
+          <i class="olive big arrow ${utils.StationUtil.trend('windSpeed', _station)} icon"></i>
         </div>
       </div>
     </div>
@@ -57,11 +57,11 @@
         <div class="left floated left aligned column">
           <h3>Pressure</h3>
           ${_station.readings.pressure[_station.lastIndex()]} hPa<br>
-          ${_station.minMax('pressure')}
+          ${utils.StationUtil.minMax('pressure', _station)}
         </div>
         <div class="right floated center aligned column">
           <i class="right teal huge sun outline loading icon"></i><br><br>
-          <i class="teal big arrow ${_station.trend('pressure')} icon"></i></div>
+          <i class="teal big arrow ${utils.StationUtil.trend('pressure', _station)} icon"></i></div>
       </div>
     </div>
   </div>

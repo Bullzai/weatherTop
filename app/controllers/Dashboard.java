@@ -12,12 +12,7 @@ import java.util.List;
 public class Dashboard extends Controller {
   public static void index() {
     Logger.info("Rendering Dashboard");
-    Member member = Accounts.getLoggedInMember();
-
-    if (member == null) {
-      Accounts.logout(); // log them out if web app was restarted and newly created account cookie was still set
-    }
-
+    Member member = Accounts.getLoggedInMember(); // also redirects them to login page if not logged in
     List<Station> stations = member.stations;
 
     if (stations.size() > 0) { // check if there is a station
@@ -34,7 +29,7 @@ public class Dashboard extends Controller {
 
   public static void addStation(String name, double latitude, double longitude) {
     Logger.info("Adding a station");
-    Member member = Accounts.getLoggedInMember();
+    Member member = Accounts.getLoggedInMember(); // also redirects them to login page if not logged in
     Station station = new Station(name, latitude, longitude);
     member.stations.add(station);
     member.save();
@@ -42,7 +37,7 @@ public class Dashboard extends Controller {
   }
 
   public static void deleteStation(Long id) {
-    Member member = Accounts.getLoggedInMember();
+    Member member = Accounts.getLoggedInMember(); // also redirects them to login page if not logged in
     Station station = Station.findById(id);
     Logger.info("DELETING station " + station.name);
     member.stations.remove(station); // remove the station from this member

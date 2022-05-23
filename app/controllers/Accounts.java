@@ -11,7 +11,8 @@ public class Accounts extends Controller {
       redirect("/dashboard");
     } else {
       render("signup.html");
-    }  }
+    }
+  }
 
   public static void login() {
     // check if member is already logged in and redirect them
@@ -20,6 +21,11 @@ public class Accounts extends Controller {
     } else {
       render("login.html");
     }
+  }
+
+  public static void logout() {
+    session.clear();
+    redirect("/");
   }
 
   public static void register(String email, String password, String firstname, String lastname) {
@@ -44,18 +50,13 @@ public class Accounts extends Controller {
     }
   }
 
-  public static void logout() {
-    session.clear();
-    redirect("/");
-  }
-
   public static Member getLoggedInMember() {
     Member member = null;
     if (session.contains("logged_in_Memberid")) {
       String memberId = session.get("logged_in_Memberid");
       member = Member.findById(Long.parseLong(memberId));
     } else {
-      login(); // once we check, send them back to login page
+      login(); // send them back to login page if they're not logged in
     }
     return member;
   }

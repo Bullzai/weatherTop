@@ -3,7 +3,9 @@ package controllers;
 import models.Member;
 import models.Reading;
 import models.Station;
+
 import org.joda.time.DateTime;
+
 import play.Logger;
 import play.mvc.Controller;
 
@@ -11,7 +13,7 @@ import java.util.Date;
 
 public class StationCtrl extends Controller {
   public static void index(Long id) {
-    Member member = Accounts.getLoggedInMember();
+    Member member = Accounts.getLoggedInMember(); // redirects them to login page if not logged in (prevent method)
     Station station = Station.findById(id);
     Logger.info("Rendering Station " + id);
     render("station.html", station);
