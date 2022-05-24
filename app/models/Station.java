@@ -23,12 +23,5 @@ public class Station extends Model {
     this.latitude = latitude;
     this.longitude = longitude;
   }
-
-  public int lastIndex() {
-    if (!readings.isEmpty()) {
-      return readings.size() - 1;
-    }
-    return 0;
-  }
 }
 

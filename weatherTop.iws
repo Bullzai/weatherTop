@@ -2,16 +2,102 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54164fcd-238a-4748-b313-13a6ffe84741" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Template_1003$_run_closure1$_closure2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Template_1015$_run_closure1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Template_1015.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Template_1017$_run_closure1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Template_1017.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Template_1018$_run_closure1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Template_1018.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Template_1019$_run_closure1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Template_1019.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Template_1020$_run_closure1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Template_1020.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Template_1021$_run_closure1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Template_1021.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Template_1022$_run_closure1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Template_1022.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Template_1023$_run_closure1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Template_1023.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Template_1024$_run_closure1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Template_1024.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Template_1025$_run_closure1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Template_1025.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Template_1026$_run_closure1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Template_1026.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Template_1027$_run_closure1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Template_1027.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Template_1028$_run_closure1$_closure2$_closure3.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Template_1028$_run_closure1$_closure2$_closure4.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Template_1028$_run_closure1$_closure2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Template_1028$_run_closure1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Template_1028.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Template_1029$_run_closure1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Template_1029.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Template_1030$_run_closure1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Template_1030.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Template_1031$_run_closure1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Template_1031.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Template_1032$_run_closure1$_closure2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Template_1032$_run_closure1$_closure3.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Template_1032$_run_closure1$_closure4.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Template_1032$_run_closure1$_closure5.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Template_1032$_run_closure1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Template_1032.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Template_1033$_run_closure1$_closure2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Template_1033$_run_closure1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Template_1033.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Template_1034$_run_closure1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Template_1034.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Template_1035$_run_closure1$_closure2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Template_1035$_run_closure1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Template_1035.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Template_1036$_run_closure1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Template_1036.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Template_1037$_run_closure1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Template_1037.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Template_1038$_run_closure1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Template_1038.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Template_1000$_run_closure1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Template_1000$_run_closure1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Template_1000.class" beforeDir="false" afterPath="$PROJECT_DIR$/Template_1000.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Template_1001$_run_closure1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Template_1001$_run_closure1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Template_1001.class" beforeDir="false" afterPath="$PROJECT_DIR$/Template_1001.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Template_1002$_run_closure1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Template_1002$_run_closure1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Template_1002.class" beforeDir="false" afterPath="$PROJECT_DIR$/Template_1002.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Template_1003$_run_closure1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Template_1003$_run_closure1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Template_1004$_run_closure1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Template_1004$_run_closure1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Template_1004.class" beforeDir="false" afterPath="$PROJECT_DIR$/Template_1004.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Template_1005$_run_closure1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Template_1005$_run_closure1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Template_1005.class" beforeDir="false" afterPath="$PROJECT_DIR$/Template_1005.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Template_1006$_run_closure1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Template_1006$_run_closure1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Template_1006.class" beforeDir="false" afterPath="$PROJECT_DIR$/Template_1006.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Template_1007$_run_closure1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Template_1007$_run_closure1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Template_1007.class" beforeDir="false" afterPath="$PROJECT_DIR$/Template_1007.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Template_1008$_run_closure1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Template_1008$_run_closure1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Template_1008.class" beforeDir="false" afterPath="$PROJECT_DIR$/Template_1008.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Template_1009$_run_closure1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Template_1009$_run_closure1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Template_1009.class" beforeDir="false" afterPath="$PROJECT_DIR$/Template_1009.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Template_1010$_run_closure1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Template_1010$_run_closure1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Template_1010.class" beforeDir="false" afterPath="$PROJECT_DIR$/Template_1010.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Template_1011$_run_closure1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Template_1011$_run_closure1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Template_1011.class" beforeDir="false" afterPath="$PROJECT_DIR$/Template_1011.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Template_1012$_run_closure1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Template_1012$_run_closure1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Template_1012.class" beforeDir="false" afterPath="$PROJECT_DIR$/Template_1012.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Template_1013$_run_closure1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Template_1013$_run_closure1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Template_1013.class" beforeDir="false" afterPath="$PROJECT_DIR$/Template_1013.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Template_1014$_run_closure1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Template_1014$_run_closure1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Template_1014.class" beforeDir="false" afterPath="$PROJECT_DIR$/Template_1014.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Template_1016$_run_closure1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Template_1016$_run_closure1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Template_1016.class" beforeDir="false" afterPath="$PROJECT_DIR$/Template_1016.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/Station.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Station.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/tags/addstation.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/tags/addstation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/tags/submitreport.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/tags/submitreport.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/bytecode/DEV/_app_views_tags_addstation.html" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/bytecode/DEV/_app_views_tags_addstation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/bytecode/DEV/_app_views_tags_submitreport.html" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/bytecode/DEV/_app_views_tags_submitreport.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/utils/StationUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/utils/StationUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/tags/latestweather.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/tags/latestweather.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf/application.conf" beforeDir="false" afterPath="$PROJECT_DIR$/conf/application.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/bytecode/DEV/_app_views_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/bytecode/DEV/_app_views_profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/bytecode/DEV/_app_views_tags_latestweather.html" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/bytecode/DEV/_app_views_tags_latestweather.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tmp/bytecode/DEV/models.Station" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/bytecode/DEV/models.Station" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/classes/models/Station.class" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/classes/models/Station.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weatherTop.iws" beforeDir="false" afterPath="$PROJECT_DIR$/weatherTop.iws" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

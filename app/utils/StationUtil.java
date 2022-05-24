@@ -12,11 +12,26 @@ import models.Station;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 
 import static java.lang.Math.pow;
 import static java.lang.Math.round;
 
 public class StationUtil {
+
+  public static float temperature(Station station) {
+    if (!station.readings.isEmpty()) {
+      return station.readings.get(station.readings.size() - 1).temperature;
+    }
+    return 0;
+  }
+
+  public static float pressure(Station station) {
+    if (!station.readings.isEmpty()) {
+      return station.readings.get(station.readings.size() - 1).pressure;
+    }
+    return 0;
+  }
 
   public static float fahrenheit(Station station) {
     if (!station.readings.isEmpty()) {
@@ -78,7 +93,7 @@ public class StationUtil {
         break;
       default:
         weather[0] = "";
-        weather[1] = "meteor";
+        weather[1] = "";
     }
     return weather;
   }
@@ -114,6 +129,27 @@ public class StationUtil {
       beaufort = 11;
     }
     return beaufort;
+  }
+
+  public static String beaufortLabel(int beaufort) {
+    // Create a HashMap object called beaufortHashMap
+    HashMap<Integer, String> beaufortHashMap = new HashMap<Integer, String>();
+
+    // Add keys and values (beaufort, label)
+    beaufortHashMap.put(0, "Calm");
+    beaufortHashMap.put(1, "Light Air");
+    beaufortHashMap.put(2, "Light Breeze");
+    beaufortHashMap.put(3, "Gentle Breeze");
+    beaufortHashMap.put(4, "Moderate Breeze");
+    beaufortHashMap.put(5, "Fresh Breeze");
+    beaufortHashMap.put(6, "Strong Breeze");
+    beaufortHashMap.put(7, "Near Gale");
+    beaufortHashMap.put(8, "Gale");
+    beaufortHashMap.put(9, "Severe Gale");
+    beaufortHashMap.put(10, "Strong Storm");
+    beaufortHashMap.put(11, "Violent Storm");
+
+    return beaufortHashMap.get(beaufort);
   }
 
   public static String direction(Station station) {
@@ -166,6 +202,8 @@ public class StationUtil {
     if (!station.readings.isEmpty()) {
       temperature = station.readings.get(station.readings.size() - 1).temperature;
       windSpeed = station.readings.get(station.readings.size() - 1).windSpeed;
+    } else {
+      return 0;
     }
 
     double power = pow(windSpeed, 0.16);
