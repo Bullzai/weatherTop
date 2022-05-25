@@ -15,22 +15,16 @@ A Web companion application for modular weather station WeatherTop 1000
 
 ### Running app on local machine
 
-* Edit file conf/application.conf
-Change from 
+* Edit file conf/application.conf and change from 
 ```
 application.mode=prod
-```
-to 
-```
-application.mode=dev
-```
-and from 
-```
 db=${catflower}
 ```
 to 
 ```
+application.mode=dev
 db.default=mem
+
 ```
 * Or you can set Environment Variables on your PC:
 ```
@@ -49,8 +43,8 @@ play run
 
 ## Authors
 
-Name : Vidmantas Valskis
-Student Number: 20099690
+* Name : Vidmantas Valskis
+* Student Number: 20099690
 
 
 ## Version History
