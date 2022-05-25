@@ -25,7 +25,6 @@ to
 ```
 application.mode=dev
 db.default=mem
-
 ```
 * Or you can set Environment Variables on your PC:
 ```
