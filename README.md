@@ -8,12 +8,13 @@ A joint Web Development & Programming assigment.
 A Web companion application for modular weather station WeatherTop 1000
 
 
-### Dependencies
+## Dependencies
 
 * Java 11
 * Play 1.6
 
-### Running app on local machine
+
+## Running app on local machine
 
 * Edit file conf/application.conf and change from 
 ```
@@ -33,7 +34,7 @@ value = postgres://user:pwd@host/database
 ```
 
 
-### Executing program
+## Executing program
 
 ```
 cd web-app/
